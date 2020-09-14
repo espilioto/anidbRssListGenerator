@@ -1,11 +1,14 @@
 // ==UserScript==
 // @name         AniDB uTorrent rss list generator
-// @namespace    http://tampermonkey.net/
-// @version      1
+// @namespace    anindbrss
+// @version      1.01
 // @description  Generates a | delimited anime name list for you to optimally edit
 // @author       SouLSLayeR
 // @match        https://anidb.net/user/wishlist/*
 // @grant        none
+// @downloadURL	 https://raw.githubusercontent.com/espilioto/anidbRssListGenerator/master/anidbRssListGenerator.js
+// @updateURL	   https://raw.githubusercontent.com/espilioto/anidbRssListGenerator/master/anidbRssListGenerator.js
+// @homepage	   https://github.com/espilioto/anidbRssListGenerator
 // ==/UserScript==
 
 (function () {
@@ -13,7 +16,7 @@
 
   var animus = Array.from(document.querySelectorAll(".wishlist > td.name > a"));
   if (animus.length > 0) {
-    let button = `<li id="animu-list-button"><a name="unclickable" href="#">Generate uTorrent rss list</a></li>`;
+    let button = `<li id="animu-list-button"><a name="unclickable" href="#">Generate rss list</a></li>`;
     document
       .querySelector(".g_list, .nav")
       .insertAdjacentHTML("beforeend", button);
@@ -33,7 +36,7 @@
         document.execCommand("copy");
         document.body.removeChild(dummy);
 
-        toastr.success("Copied uTorrent rss list to clipboard");
+        toastr.success("Copied to clipboard");
       });
   }
 })();
