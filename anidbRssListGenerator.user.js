@@ -14,7 +14,7 @@
 (function () {
   var animuTitles;
 
-  var animus = Array.from(document.querySelectorAll(".wishlist > td.name > a"));
+  var animus = Array.from(document.querySelectorAll(".wishlist .wishlist_type_towatch > td.name > a"));
   if (animus.length > 0) {
     let button = `<li id="animu-list-button"><a name="unclickable" href="#">Generate rss list</a></li>`;
     document.querySelector(".g_list, .nav").insertAdjacentHTML("beforeend", button);
