@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         AniDB uTorrent rss list generator
+// @name         AniDB torrent rss list generator
 // @namespace    anindbrss
-// @version      1.01
-// @description  Generates a | delimited anime name list for you to optimally edit
+// @version      1.1
+// @description  Generates a delimited anime name list for you to optimally edit
 // @author       SouLSLayeR
 // @match        https://anidb.net/user/wishlist/*
 // @grant        none
