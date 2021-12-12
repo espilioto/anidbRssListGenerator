@@ -16,7 +16,7 @@
 
   var animuTitles = Array.from(document.querySelectorAll(".wishlist .wishlist_type_towatch > td.name > a")).map(x => x.innerText.replaceAll('`', '\''));
   if (animuTitles.length > 0) {
-    let button = `<li id="animu-list-button"><a name="unclickable" href="#">Generate rss list</a></li>`;
+    let button = `<li id="animu-list-button"><a name="unclickable" href="#">Generate rss lists</a></li>`;
     document.querySelector(".g_list, .nav").insertAdjacentHTML("beforeend", button);
 
     utorrentString = animuTitles.map((x) => `*${x}*`).join("|");
