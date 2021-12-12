@@ -12,18 +12,19 @@
 // ==/UserScript==
 
 (function () {
-  var animuTitles;
+  var utorrentString, qbtRegexString;
 
   var animus = Array.from(document.querySelectorAll(".wishlist .wishlist_type_towatch > td.name > a"));
   if (animus.length > 0) {
     let button = `<li id="animu-list-button"><a name="unclickable" href="#">Generate rss list</a></li>`;
     document.querySelector(".g_list, .nav").insertAdjacentHTML("beforeend", button);
-    animuTitles = animus.map(({ innerText }) => `*${innerText}*|`).join("");
+    utorrentString = animus.map(({ innerText }) => `*${innerText}*|`).join("");
+    qbtRegexString = animus.map(({ innerText }) => `(${innerText})|`).join("");
 
     document.querySelector("#animu-list-button").addEventListener("click", () => {
         var tempTextbox = document.createElement("textarea");
         document.body.appendChild(tempTextbox);
-        tempTextbox.value = animuTitles;
+        tempTextbox.value = `uTorrent format:\r\n${utorrentString}\r\n\r\nqBt format:\r\n${qbtRegexString}`;
         tempTextbox.select();
         document.execCommand("copy");
         document.body.removeChild(tempTextbox);
